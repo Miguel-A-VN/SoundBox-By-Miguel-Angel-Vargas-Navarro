@@ -1,0 +1,179 @@
+<%- include("../partials/head") %>
+    <link rel="stylesheet" href="styles/productCart.css">
+    <script src="https://kit.fontawesome.com/d5c465f7b6.js" crossorigin="anonymous"></script>
+    <title>Product Cart</title>
+
+    <%- include("../partials/header") %>
+
+        <main>
+            <section class="seccion-contenedora">
+                <div class="carrito" id="carrito">
+                    <h1>Mi Cajita</h1>
+                    <div class="ordenador-container">
+                        <div class="labels-ordenador" id="labels-ordenador">
+                            <div class="ordenador">
+                                <button class="hideCart"><i class="fa-solid fa-circle-arrow-up"></i></button>
+                            </div>
+                            <button onclick="ordenarAlfabeticamente()">
+                                <i class="fa-solid fa-arrow-down-a-z">
+                                </i>
+                            </button>
+                            <form method="POST" action="/">
+                                <details>
+                                    <summary>Filtrar:</summary>
+                                    <div class="filterBy-container">
+                                        <button>Precio</button>
+                                        <button>Descuento</button>
+                                        <button>Marca</button>
+                                        <button>Cantidad</button>
+                                        <button>favoritos</button>
+                                    </div>
+                                </details>
+                                <div class="payment-container">
+                                    <input type="submit" value="payment">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="desplegable show__modal" id="desplegable">
+                        <% products.forEach(product=> { %>
+                            <div class="card" id="card" data-order="<%= product.id %>">
+
+                                <div class="card-image-container">
+                                    <img class="card-img" src="/img/products/<%= product.image %>" alt="">
+                                </div>
+
+                                <div class="nombre-marca">
+                                    <a href="/products/productDetail/<%= product.id %>">
+                                        <h5>
+                                            <%= product.name %>
+                                        </h5>
+                                    </a>
+                                    <p>
+                                        <%= product.brand %>
+                                    </p>
+                                </div>
+                                <div class="addNumber_cont">
+                                    <button id="disabledBtn" onclick="decrementar('<%= product.id %>')">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+
+                                    <div class="value_cont">
+                                        <!-- <input type="number" id="amount" value="0"> -->
+
+                                        <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
+                                    </div>
+
+                                    <button onclick="incrementar('<%= product.id %>','<%= product.quantity %>')">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+
+                                </div>
+                                <div class="precio-descuento">
+                                    <span>
+                                        <%= product.price %> $
+                                    </span>
+                                    <span style="color: green;">
+                                        <% if (product.discount == null ) {%>
+                                            0
+                                           <% } else {%>
+                                               -<%= product.discount %> %
+                                               <% }  %>
+                                    </span>
+                                </div>
+                                <div class="delete-card">
+                                    <span> eliminar </span>
+                                </div>
+                            </div>
+
+                            <% }); %>
+                                <div class="descripcion-card">
+                                    <p>imagen</p>
+                                    <p>producto</p>
+                                    <p>cantidad</p>
+                                    <p>precio</p>
+                                </div>
+                    </div>
+                    <div class="pie">
+                        <button class="showCart"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                    </div>
+                </div>
+                <section class="segunda-seccion">
+                    <div class="descripcion-pago-total">
+                        <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
+                        <% products.forEach(product=> { %>
+                            <div class="separador-izquierda">
+                                <p>
+                                    <%= product.name %>
+                                </p>
+                            </div>
+
+                            <div class="separador-medio">
+                                <p style="color: green;">
+                                    <% if (product.discount == null ) {%>
+                                         0
+                                        <% } else {%>
+                                            -<%= product.discount %> %
+                                            <% }  %>
+                                </p>
+                            </div>
+
+                            <div class="separador-derecha">
+                                <p>
+                                    <%= product.price + "$" %>
+                                </p>
+                            </div>
+
+                            <% }); %>
+                    </div>
+
+                    <div class="titulo-seccion">
+                        <!-- seccion carrusel -->
+                        <span>
+                            <h3>Seguí navegando!</h3>
+                        </span>
+                    </div>
+                </section>
+            </section>
+            </section>
+
+
+            <div class="grid-container">
+                <% products.forEach(product=> { %>
+                    <a href="/products/productDetail/<%= product.id %>" class="grid-item">
+                        <div class="image-related-container">
+                            <img src="/img/products/<%= product.image %>" alt="">
+                        </div>
+                        <section class="name-related-card">
+                            <p>
+                                <%=product.name%>
+                            </p>
+                            <p>
+                                <%=product.price + "$" %>
+                            </p>
+                            <p>
+                                <% if (product.discount == null ) {%>
+                                    
+                                   <% } else {%>
+                                       -<%= product.discount %> %
+                                       <% } %>
+                            </p>
+                        </section>
+
+                        <section class="description-related-card">
+                            <p><%= product.description %></p>
+                        </section>
+                    </a>
+
+                    <% }); %>
+            </div>
+
+
+
+        </main>
+
+        <%- include("../partials/footer") %>
+
+            <!-- los script va a ir en nuestros archivos ejs hasta que 
+    aprendamos DOM, luego los activamos en el partial del foter-->
+            <script src="/scripts/productCart.js"></script>

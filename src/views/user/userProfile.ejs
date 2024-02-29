@@ -1,0 +1,96 @@
+<!-- -VISTA PARA USUARIOS- -->
+
+<%- include('../partials/head.ejs') %>
+    <link href="/styles/users.css" rel="stylesheet">
+
+    <!-- =========================================================================================================== -->
+
+    <!-- -HEADER / ENCABEZADO- -->
+    <%- include('../partials/header.ejs') %>
+
+        <!-- =========================================================================================================== -->
+
+    <main>             
+                
+        <h3 id="profile-title">
+            <strong> Perfil de Usuario de </strong>
+            <%= user.first_name %> <%= user.last_name %>
+        </h3>
+        <section class="primary-section">
+                    
+                    <section class="second-section">
+                        <div class="img-container">
+                            <img src="/img/users/<%= user.image %>" alt="">
+                        </div>
+                    </section>
+                    
+                
+                <section class="first-section">
+                    <div class="user-description" id="user-description">
+                        <h3 style="text-decoration: underline;">
+                            Tus Datos:
+                        </h3>
+                        <h3>
+                            Nombre: <%= user.first_name %>
+                        </h3>
+                        <h3>
+                            Apellido: <%= user.last_name %>
+                        </h3>
+                        <h3>
+                            E-mail: <%= user.e_mail %>
+                        </h3>
+                        <h3>
+                            Tipo de usuario: <%= user.user_type.user_type %>
+                        </h3>
+                        <h3>
+                            País: <%= user.country.country %>
+                        </h3>
+
+                        <div class="delete-user">
+                            <button class="profile-button" onclick="show()"> Editar usuario </button>
+                        </div>
+                    </div>
+                    <section id="edit-user-form">
+                        <form action="/users/userProfile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/x-www-form-urlencoded">
+                            <label for=""><p>Name</p>
+                                <input name="first_name" type="text" value="<%= user.first_name %>" >
+                            </label>
+                            <label for="">
+                                <p>Last name</p>
+                                <input name="last_name" type="text" value="<%= user.last_name %>">
+                            </label>
+                            <label for="">
+                                <p>Email</p>
+                                <input name="e_mail" type="text" value="<%= user.e_mail %>" >
+                            </label>
+                            
+                            <div>
+                                <input class="profile-button" type="submit">
+                                <button class="profile-button" onclick="hide()">Volver</button>
+                            </div>
+                            
+                        </form>
+                    </section>
+                    
+                </section>
+            </section>
+                
+                <section class="registered-purchases">
+                    <h3>Compras anteriores</h3>
+                    <div class="latest-purchases">
+                        <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                        <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                        <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                        <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                    </div>
+
+            </section>
+        </main>
+
+        <!-- =========================================================================================================== -->
+
+        <!-- FOOTER / PIE DE PAGINA -->
+        <%- include('../partials/footer.ejs') %>
+        <script src="/scripts/user.js"></script>
+
+    <!-- =========================================================================================================== -->

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-es">
+<!-- -VISTA PARA ADMIN Y USUARIOS- -->
+
+<%- include('../partials/head.ejs') %>
+
+    <link href="/styles/users.css" rel="stylesheet">
+
+
+    <body>
+
+        <!-- =========================================================================================================== -->
+
+        <!-- -HEADER / ENCABEZADO- -->
+        <%- include('../partials/header.ejs') %>
+            <!-- =========================================================================================================== -->
+
+            <main>
+                <h1>Bienvenido/a <%= userToEdit.first_name %>!</h1>
+                <section class="primary-section">
+                    <section class="first-section">
+                        <!-- <div class="user-description" id="user-description">
+                            <h3>
+                                <%= userToEdit.first_name %>
+                            </h3>
+                            <h3>
+                                <%= userToEdit.last_name %>
+                            </h3>
+                            <h3>
+                                <%= userToEdit.e_mail %>
+                            </h3>
+                            <p>Argentina</p>
+
+                            <div class="delete-user">
+                                <a href="/userProfile/:id/preference">Editar</a>
+                            </div>
+                        </div> -->
+
+                        <section id="edit-user-form">
+                            <form action="">
+                                <label for=""><p>Name</p>
+                                    <input type="text" value="<%= userToEdit.first_name %>" >
+                                </label>
+                                <label for=""><p>Last name</p>
+                                    <input type="text" value="<%= userToEdit.last_name %>">
+                                </label>
+                                <label for=""><p>Email</p>
+                                    <input type="text" value="<%= userToEdit.e_mail %>" >
+                                </label>
+
+                                <div>
+                                    <input type="submit">
+                                </div>
+                                <div>
+                                    <button onclick="hide()">volver</button>
+                                </div>
+                            </form>
+                        </section>
+                        
+
+                    </section>
+                    <section class="second-section">
+                        <div class="img-container">
+                            <img src="<%= userToEdit.image %>" alt="">
+                        </div>
+
+                        <div class="img-buttons">
+                            <input type="file">
+                            <input type="submit">
+                        </div>
+                        
+                    </section>
+                </section>
+            </main>
+
+            <!-- =========================================================================================================== -->
+
+            <!-- FOOTER / PIE DE PAGINA -->
+            <%- include('../partials/footer.ejs') %>
+            
+                <!-- =========================================================================================================== -->
+    </body>
+
+</html>

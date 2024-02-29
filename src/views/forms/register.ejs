@@ -1,0 +1,173 @@
+    <%- include('../partials/head.ejs') %>
+    <link href="/styles/loginRegister.css" rel="stylesheet">
+    
+
+<!-- =========================================================================================================== -->
+        
+        <!-- -HEADER / ENCABEZADO- -->
+        <%- include('../partials/header.ejs') %>
+
+<!-- =========================================================================================================== -->
+
+        <!-- ----LOGIN / ACCESO---- -->
+        <main class="main-login">
+            
+            <section class="main-login_section">
+
+                <div class="main-login_title">
+                    <h1>¡Comienza la buena vibra!</h1>
+                </div>
+                <form action="/users/register" method="POST" class="main-login_form" enctype="multipart/form-data">
+
+                    <div class="main-login_form_box-container one-login">
+                        
+                        <div class="main-login-form-box-container_title">
+                            <h2>CREAR CUENTA</h2>
+                        </div>
+                        
+                        <div class="register-method-change">
+                                <i class="fa-brands fa-google-plus-g"></i>
+                                <i class="fa-brands fa-square-facebook"></i>
+                                <i class="fa-brands fa-apple fa"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <% if (locals.errores) {  
+
+                            errores.forEach(error => { %>
+                                <p class="error"> <%= error.msg %> </p>
+                            <%  }); 
+                        }%>
+                        
+                        <div class="fieldset names">
+                            <div class="label">
+                                <label for="Nombres"></label>
+                            </div>
+                                <div class="fa-onda fa-logo">
+                                    <img src="/img/svg/simbolequalizer.svg" alt="">
+                                </div>
+                            <div class="input">                                 <!-- Condición para el manejo de errores en el input. Si el input es correcto se lo recupera con 'old' -->
+                                <input id="user-name" name="name" type="text" placeholder="Nombres" value="<%= locals.old && old.name ? old.name : '' %>">
+                            </div>
+                        </div>
+
+                        <div class="fieldset last-names">
+                            <div class="label">
+                                <label for="Apellidos"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input id="last-name" name="lastName" type="text" placeholder="Apellidos" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                            </div>
+                        </div>
+        
+                        <div class="fieldset email">    
+                            <div class="label">
+                                <label for="email"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input id="e-mail" name="email" type="e-mail" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : '' %>">
+                            </div>
+                        </div>
+                        
+                        <div class="fieldset country">
+                            
+                            <select name="country" id="country" class="fieldset-input estado-producto">
+                                <option value="choose">Elegir país</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Colombia">Colombia</option>
+                            </select>
+
+                        </div>
+        
+                        <div class="fieldset password">
+                            <div class="label">
+                                <label for="password"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input id="password" name="password" type="password" placeholder="Contraseña" value="<%= locals.old && old.password ? old.password : '' %>">
+                            </div>
+
+                        </div>
+
+                        <div class="fieldset confirm-password">
+                            <div class="label">
+                                <label for="Confirmar contraseña"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                            <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirmar contraseña">
+                            </div>
+                        </div>
+
+                        <div class="fieldset img-profile">
+                            <div class="label">
+                                <label for="Imagen de Perfil"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input placeholder="Imgen de Perfil" type="file"  name="imgProfile" class="img-profile">
+                            </div>
+                        </div>
+                        
+                        <div class="button crear">
+                            <input type="submit" value="Crear">
+                        </div>
+                            
+                    </div>
+        
+                    <div class="main-login_form_box-container two-login">
+                            
+                            <article class="paragraph">
+                                
+                            <div class="img-link-soundBox">
+                                <a href="/">
+                                    <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
+                                </a>
+                            </div>
+                            
+                            <div class="text">
+                                
+                                <p>Ya eres parte de SoundBox?</p>
+                                
+                                <div class="a-crear-cuenta">
+                                    <a href="/login">Ingresar</a>
+                                </div>
+                                
+                            </div>
+        
+                        </article>
+                        
+                        <div class="button">
+        
+                            <a href="/users/login">
+                                <input type="button" name="" id="" value="Ingresar">
+                            </a>
+                            
+                        </div>
+        
+                    </div>
+                    
+                </form>
+
+            </section>
+            
+        </main>
+
+<!-- =========================================================================================================== -->
+        
+        <!-- FOOTER / PIE DE PAGINA -->
+        <%- include('../partials/footer.ejs') %>
+        
+<!-- =========================================================================================================== -->
