@@ -6,6 +6,7 @@ This is an update of the SoundBox project carried out as a group for academic tr
 We are an e-commerce store specializing in musical instruments and accessories with headquarters in Colombia and Argentina. We ship our products worldwide. On our website, you will find discounts and special offers. We offer a wide range of musical instruments and accessories, from guitars to sound mixers, headphones, and maracas. A 5% additional fee will be charged for shipments outside Argentina or Colombia.
 
 Remember to bring good vibes.
+
 ---
 ### Members of the initial project
 
