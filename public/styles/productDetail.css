@@ -1,5 +1,12 @@
 /* GENERAL */
 
+.caja-general {
+	background-image: url(/img/home/fondo-product-detail.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 a {
 	text-decoration: none;
 	color: black;
@@ -16,7 +23,7 @@ a {
 
 .precio-producto {
 	margin: 0 5px;
-	color: #ff540a;
+	color: var(--orange-color);;
 }
 
 .descripcion-producto {
@@ -50,7 +57,7 @@ a {
 .boton-agregar-carrito {
 	border: none;
 	border-radius: 7px;
-	background-color: #ff540a;
+	background-color: var(--orange-color);;
 	color: white;
 	width: 180px;
 	height: 30px;
@@ -58,21 +65,6 @@ a {
 
 .boton-agregar-carrito:hover {
 	background-color: #550c18;
-}
-
-.fa-heart {
-    position: absolute;
-    right: 32%;
-    top: 26%;
-	border-radius: 7px;
-	font-size: 25px;
-	stroke: black;
-	stroke-width: 100;
-	color: #ff540a;
-}
-
-.fa-heart:hover {
-	color: red;
 }
 
 .fa-cart-shopping {
@@ -168,7 +160,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .boton-accion-borrar {
 	border-radius: 5px;
 	border: none;
-	background-color: #ff540a;
+	background-color: var(--orange-color);;
 	color: white;
 	height: 32px;
 }
@@ -176,7 +168,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .boton-accion-editar {
 	border-radius: 7px;
 	border: none;
-	background-color: #ff540a;
+	background-color: var(--orange-color);;
 	color: white;
 	height: 32px;
 }
@@ -203,6 +195,16 @@ a:hover {
 
 /* CAJAS */
 
+.border-div {
+	display: flex;
+    backdrop-filter: blur(4px);
+    background-color: rgba(211, 211, 211, 0.551);
+    border: var(--orange-color) solid 3px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
 .caja-general {
 	display: flex;
 	flex-direction: column;
@@ -210,14 +212,16 @@ a:hover {
 }
 
 .caja-sub-general-informacion {
+	margin-top: 1rem;
+	width: 50vw;
 	display: flex;
 	flex-direction: column;
-	padding: 0 35px;
 }
 
 .caja-imagenes-general {
 	display: flex;
 	flex-direction: column;
+	margin-top: 4rem;
 }
 
 .caja-precio-clasificacion {
@@ -235,10 +239,6 @@ a:hover {
 .caja-cantidad-producto-carrito {
 	display: flex;
 	margin: 15px 0 20px 0;
-}
-
-.formulario-boton-agregar-carrito {
-	margin: 0 0 0 50px;
 }
 
 .caja-primera {
@@ -268,10 +268,20 @@ a:hover {
 }
 
 .caja-descripcion-secundaria-producto {
-	padding: 0 80px;
-	margin: 0 0 70px 0;
+	padding: 2rem;
+	margin: 70px 0 70px 0;
+	box-shadow: 0px 0px 20px 0px black;
+	background: #ebebeb;
 }
 
 .caja-secciones-secundarias-informacion {
 	margin-top: 100px;
+}
+
+
+@media (max-width:768px) {
+	.caja-sub-general-informacion {
+		width: 85vw;
+
+	}
 }

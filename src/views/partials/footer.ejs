@@ -1,99 +1,93 @@
-<footer class="footer">
-    <aside class="right-menu-container">
-        
-        <div class="container__button">
-            <div class="aside-text" id="cart-text">
-                <p>Agrega productos a tus favoritos</p>
+<footer class="footer flex center-x width-full">
+
+    <div class="div__footer max-width-1365px mW-768-width-1_85 mW-768-noWrap">
+
+        <div class="container-simbol">
+            <a class="block" href="/">
+                <img id="simbol-footer" src="/img/svg/simbolequalizer.svg" alt="SoundBox">
+            </a>
+        </div>
+
+        <div class="div__text flex flxCenter flex-wrap width-full">
+
+            <nav class="info">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Nuestros servicios</a></li>
+                    <li><a href="#">Tiendas</a></li>
+                    <li><a href="#">Garantía post-venta</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="/contactUs">Contáctanos</a></li>
+                </ul>
+            </nav>
+
+            <div class="copyright">
+                <p>SOUNDBOX &copy; 2023-2034 Todos los derechos reservados</p>
             </div>
-            <div class="right-icons" id="cart">
-                <a href="/productCart"><img src="/img/svg/cajitaSBX.svg" alt=""></a>
-
-            </div>
         </div>
 
-        <div class="container__button">
-            <div class="aside-text" id="fav-text">
-                <p>Agrega productos a tus favoritos</p>
-            </div>
-            <div class="right-icons" id="favourites">
-                <i class="fa-regular fa-heart"></i>
-            </div>
-        </div>
-
-        <div class="right-icons" id="goTop">
-            <i class="fa-solid fa-arrow-up"></i>
-        </div>
-
-        
-        <div class="promo_modalWindow">
-            <!-- <iframe  src="https://www.youtube.com/embed/4Ytt3EraVcM?si=3bnS1NEiaSXEvUv9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-        </div>
-
-    </aside>
-
-    <div class="footer-center">
-
-        <div class="container-simbol img">
-            <img id="simbol-footer" src="/img/svg/simbolequalizer.svg" alt="SoundBox">
-        </div>
-
-        <nav class="info">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Quiénes somos</a></li>
-                <li><a href="#">Nuestros servicios</a></li>
-                <li><a href="#">Tiendas</a></li>
-                <li><a href="#">Garantía post-venta</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="/contactUs">Contáctanos</a></li>
-            </ul>
-        </nav>
-
-        <div class="redes">
+        <div class="redes flex center-y">
 
             <div class="redes_img">
                 <a href="https://www.facebook.com/profile.php?id=61556380835437" target="_blank">
-                    <img src="/img/svg/facebook1.svg" alt="facebook">
+                    <img src="/img/svg/redes/facebook1.svg" alt="facebook" class="fcbk-icon">
+                    <img src="/img/svg/redes/facebook2.svg" alt="facebook" class="fcbk-icon-hover">
                 </a>
             </div>
 
             <div class="redes_img">
                 <a href="#" target="_blank">
-                    <img src="/img/svg/twitter1.svg" alt="X">
+                    <img src="/img/svg/redes/twitter1.svg" alt="X" class="x-icon">
+                    <img src="/img/svg/redes/twitter-x2.svg" alt="X" class="x-icon-hover">
                 </a>
             </div>
 
             <div class="redes_img">
                 <a href="https://www.youtube.com/channel/UC_UifoWSzTmuKmBIR3JUojA" target="_blank">
-                    <img src="/img/svg/youtube1.svg" alt="Youtube">
+                    <img src="/img/svg/redes/youtube1.svg" alt="Youtube" class="ytb-icon">
+                    <img src="/img/svg/redes/youtube2.svg" alt="Youtube" class="ytb-icon-hover">
                 </a>
             </div>
 
             <div class="redes_img">
                 <a href="https://www.instagram.com/soundboxmusicstore/" target="_blank">
-                    <img src="/img/svg/instagram1.svg" alt="Instagram">
+                    <img src="/img/svg/redes/instagram1.svg" alt="Instagram" class="inst-icon">
+                    <img src="/img/svg/redes/instagram2.svg" alt="Instagram" class="inst-icon-hover">
                 </a>
             </div>
 
         </div>
 
-        <div class="copyright">
-            <p>SOUNDBOX &copy; 2023-2034 Todos los derechos reservados</p>
-        </div>
 
     </div>
 
 </footer>
+
 
 <!-- Fonts -->
 <script src="https://kit.fontawesome.com/d5c465f7b6.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/a3518a2b0e.js" crossorigin="anonymous"></script>
 
 
-<script src="/scripts/header.js"></script>
-<script src="/scripts/index.js"></script>
-<script src="/scripts/footer.js"></script>
-
+<script src="../scripts/header.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 
+<script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '6613ff1e88ad5ce42d5aacc5' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
 </html>
+
+<!-- RUTAS APPS SCRIPTS EJS -->

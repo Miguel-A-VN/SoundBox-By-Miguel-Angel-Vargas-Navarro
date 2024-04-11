@@ -1,5 +1,5 @@
-    <%- include('../partials/head.ejs') %>
-    <link href="/styles/loginRegister.css" rel="stylesheet">
+<%- include('../partials/head.ejs') %>
+    <link href="/styles/register.css" rel="stylesheet">
     
 
 <!-- =========================================================================================================== -->
@@ -15,7 +15,7 @@
             <section class="main-login_section">
 
                 <div class="main-login_title">
-                    <h1>¡Comienza la buena vibra!</h1>
+                    <h1>¡Inicia la buena vibra!</h1>
                 </div>
                 <form action="/users/register" method="POST" class="main-login_form" enctype="multipart/form-data">
 
@@ -29,7 +29,6 @@
                                 <i class="fa-brands fa-google-plus-g"></i>
                                 <i class="fa-brands fa-square-facebook"></i>
                                 <i class="fa-brands fa-apple fa"></i>
-                                <i class="fa-brands fa-twitter"></i>
                         </div>
                         <% if (locals.errores) {  
 
@@ -37,16 +36,27 @@
                                 <p class="error"> <%= error.msg %> </p>
                             <%  }); 
                         }%>
+
+                        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+                            <!-- Iterar sobre los errores y mostrar mensajes -->
+                            <% for (let error = 0; error < errors.length; error++) { %>
+                                <p class="error"> <%= errors[error].msg %> </p>
+                            <% } %>
+                        <% } %>
+                        
+                        <div class="errores">
+                            <ul></ul>    
+                        </div>
                         
                         <div class="fieldset names">
                             <div class="label">
-                                <label for="Nombres"></label>
+                                <label for="user-name"></label>
                             </div>
                                 <div class="fa-onda fa-logo">
                                     <img src="/img/svg/simbolequalizer.svg" alt="">
                                 </div>
-                            <div class="input">                                 <!-- Condición para el manejo de errores en el input. Si el input es correcto se lo recupera con 'old' -->
-                                <input id="user-name" name="name" type="text" placeholder="Nombres" value="<%= locals.old && old.name ? old.name : '' %>">
+                            <div class="input">                              
+                                <input id="user-name" name="name" type="text" placeholder="Nombres" value="<%= locals.old && old.name ? old.name : '' %>" autocomplete="given-name">
                             </div>
                         </div>
 
@@ -58,7 +68,7 @@
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
                             <div class="input">
-                                <input id="last-name" name="lastName" type="text" placeholder="Apellidos" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                                <input id="last-name" name="lastName" type="text" placeholder="Apellidos" value="<%= locals.old && old.lastName ? old.lastName : '' %>" autocomplete="given-name">
                             </div>
                         </div>
         
@@ -70,18 +80,49 @@
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
                             <div class="input">
-                                <input id="e-mail" name="email" type="e-mail" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : '' %>">
+                                <input id="e-mail" name="email" type="e-mail" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : '' %>" autocomplete="given-name">
                             </div>
                         </div>
                         
                         <div class="fieldset country">
                             
                             <select name="country" id="country" class="fieldset-input estado-producto">
-                                <option value="choose">Elegir país</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Colombia">Colombia</option>
-                            </select>
-
+                                <option value="34" selected>Sin Definir </option>
+                                <option value="1">Antigua y Barbuda</option>
+                                <option value="2">Argentina</option>
+                                <option value="3">Bahamas</option>
+                                <option value="4">Barbados</option>
+                                <option value="5">Belice</option>
+                                <option value="6">Bolivia</option>
+                                <option value="7">Brasil</option>
+                                <option value="8">Canadá</option>
+                                <option value="9">Chile</option>
+                                <option value="10">Colombia</option>
+                                <option value="11">Costa Rica</option>
+                                <option value="12">Cuba</option>
+                                <option value="13">Dominicana</option>
+                                <option value="14">El Salvador</option>
+                                <option value="15">Estados Unidos</option>
+                                <option value="16">Granada</option>
+                                <option value="17">Guatemala</option>
+                                <option value="18">Guyana</option>
+                                <option value="19">Haití</option>
+                                <option value="20">Honduras</option>
+                                <option value="21">Jamaica</option>
+                                <option value="22">México</option>
+                                <option value="23">Nicaragua</option>
+                                <option value="24">Panamá</option>
+                                <option value="25">Paraguay</option>
+                                <option value="26">Perú</option>
+                                <option value="27">República Dominicana</option>
+                                <option value="28">San Cristóbal y Nieves</option>
+                                <option value="29">San Vicente y la Granadinas</option>
+                                <option value="30">Santa Lucía</option>
+                                <option value="31">Surinam</option>
+                                <option value="31">Trinidad y Tobago</option>
+                                <option value="32">Uruguay</option>
+                                <option value="33">Venezuela</option>
+                            </select> 
                         </div>
         
                         <div class="fieldset password">
@@ -92,7 +133,7 @@
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
                             <div class="input">
-                                <input id="password" name="password" type="password" placeholder="Contraseña" value="<%= locals.old && old.password ? old.password : '' %>">
+                                <input id="password" name="password" type="password" placeholder="Contraseña" value="<%= locals.old && old.password ? old.password : '' %>" autocomplete="given-name">
                             </div>
 
                         </div>
@@ -105,7 +146,7 @@
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
                             <div class="input">
-                            <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirmar contraseña">
+                            <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirmar contraseña" autocomplete="given-name">
                             </div>
                         </div>
 
@@ -139,10 +180,10 @@
                             
                             <div class="text">
                                 
-                                <p>Ya eres parte de SoundBox?</p>
+                                <p>¿Ya eres parte de SoundBox?</p>
                                 
                                 <div class="a-crear-cuenta">
-                                    <a href="/login">Ingresar</a>
+                                    <a href="/users/login">Ingresar</a>
                                 </div>
                                 
                             </div>
@@ -165,6 +206,7 @@
             
         </main>
 
+        <script src="../scripts/registerV.js"></script>
 <!-- =========================================================================================================== -->
         
         <!-- FOOTER / PIE DE PAGINA -->

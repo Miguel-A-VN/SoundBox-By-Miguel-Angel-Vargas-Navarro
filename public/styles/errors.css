@@ -1,0 +1,13 @@
+.headerBottom {
+	display: none;
+}
+
+.main__section {
+	height: 400px;
+	padding: 30px;
+	margin: 100px;
+}
+
+.div__img-error-404 {
+	height: 80%;
+}	

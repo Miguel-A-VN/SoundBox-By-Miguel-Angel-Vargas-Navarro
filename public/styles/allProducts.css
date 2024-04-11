@@ -1,0 +1,501 @@
+
+main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+
+.ordenador {
+	background-color: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1;
+	border-radius:0 18px 18px 0;
+}
+
+.titulo-ordenador {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 18px;
+	border: 2px solid white;
+	padding: 15px;
+	position: absolute;
+	left: 0;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* animacion de javascript*/
+
+.appear {
+	display: flex;
+}
+
+@keyframes titleAnimation {
+	0% {
+		display: flex;
+		background-color: rgba(0, 0, 0, 0.4);
+		width: auto;
+		left: 0%;
+		opacity: 100%;
+	}
+
+	25% {
+		background-color: rgba(0, 0, 0, 0.4);
+		width: auto;
+
+		left: 25%;
+		opacity: 100%;
+	}
+
+	75% {
+		width: auto;
+
+		background-color: rgba(0, 0, 0, 0.4);
+		left: 75%;
+		opacity: 15%;
+	}
+
+	100% {
+		width: auto;
+		display: flex;
+		left: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes dropdownOrdenadorAnimation {
+	0% {}
+
+	25% {}
+
+	75% {}
+
+	100% {
+		height: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes dropdownTituloAnimation {
+	0% {
+		opacity: 0;
+		width: 0;
+	}
+
+	25% {
+		opacity: 0;
+
+	}
+
+	75% {
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.filtro-presupuesto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	input {
+		width: 80%;
+	}
+}
+
+.filtrar-plata {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+#slide-item {
+	flex: auto 1 0;
+}
+
+.primer-seccion {
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	border-radius: 20px;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	border-radius: 20px;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked+.slider {
+	background-color: #FF540A;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #FF540A;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+.segunda-seccion {
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+.tercer-seccion {
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+.cuarta-seccion {
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+.titulo-filtros {
+	display: flex;
+	justify-content: center;
+}
+
+.populares-1 {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
+.seccion-general {
+	width: 100vw;
+	margin-top: 7.5rem;
+	padding-top: 20px;
+}
+
+.barra-titulo {
+	box-shadow: inset 0px 0px 20px 0px whitesmoke;
+	position: fixed;
+	border-radius: 18px;
+	width: 85vw;
+	background-color: var(--orange-color);;
+	height: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+.titulo {
+	font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+	text-shadow: 0px 1.7px 0px black;
+	color: white;
+
+}
+
+.descripcion-producto {
+	display: flex;
+	width: 90%;
+	height: auto;
+	justify-content: space-between;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.descuento {
+	color: green;
+}
+
+/* animaciones */
+
+.dropdown-ordenador {
+	display: none;
+	flex-wrap: nowrap;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	flex-direction: column;
+	backdrop-filter: blur(15px);
+	border-radius: 18px;
+}
+
+/*tageta add*/
+
+.img_card-add {
+	#add-icon {
+		font-size: 100px;
+		color: #fff;
+	}
+}
+
+/* animaciones carta*/
+
+.todasLasCards {
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: minmax(100px, auto);
+}
+
+/* la verdadera card */
+.container-producto {
+	margin: 15px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container-producto img {
+	width: 12vw;
+	margin: auto;
+	border: solid 1px black;
+	border-radius: 4px;
+}
+
+.detalle-producto p {
+	font-family: "Montserrat";
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: black;
+}
+
+.product-name,
+.product-brand,
+.product-category,
+.product-state,
+.product-color{
+	text-align: start;
+	font-size: 13px;
+	padding: 2px 0 2px 0;
+	margin: 0 8px 0 8px;
+}
+
+.product-price{
+	color: green;
+	font-size: 20px;
+}
+
+.product-with-discount{
+	color: red;
+	font-size: 15px;
+}
+
+.product-without-discount{
+	color: red;
+	font-size: 10px;
+}
+
+.text-price{
+	color: black;
+	font-size: 14;
+}
+
+.price-back{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 8px 0 8px;
+}
+
+/****************************/
+/*      media queryes */
+/****************************/
+
+@media (max-width: 4000px) {
+	.todasLasCards {
+		margin: auto;
+		width: 85%;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
+
+	.card .face {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		border-radius: 10px;
+		overflow: hidden;
+		transition: 0.5s;
+	}
+
+	.card .front {
+		transform: perspective(600px) rotateY(0deg);
+		box-shadow: 0 5px 10px black;
+	}
+
+	.card .front img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card .front h3 {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		line-height: 45px;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.4);
+		text-align: center;
+	}
+
+	.card .back {
+		transform: perspective(600px) rotateY(180deg);
+		background: linear-gradient(#ff2f00, #ff912aa9);
+		padding: 9px;
+		color: black;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: center;
+		border: 2px solid black;
+
+		.face-back-child {
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.637);
+
+		}
+	}
+
+	.card .back h3 {
+		font-size: 14px;
+		letter-spacing: 2px;
+		color: rgb(255, 255, 255);
+		background-color: rgba(255, 151, 53, 0.445);
+		border: 2px solid black;
+		-webkit-text-stroke: 0.2px white;
+		border-radius: 0 0 4px 4px;
+		padding: 8px;
+		margin: 1.3px;
+	}
+
+	.card .back p {
+		letter-spacing: 1px;
+	}
+
+	.marca-descripcion {
+		color: black;
+	}
+
+	.price {
+		color: green;
+		font-size: 25px;
+	}
+
+	.card:hover .front {
+		transform: perspective(600px) rotateY(180deg);
+	}
+
+	.card:hover {
+		transform: scale(1.1);
+	}
+
+	.card:hover .back {
+		transform: perspective(600px) rotateY(360deg);
+	}
+
+	.card {
+		position: relative;
+		width: 200px;
+		height: 275px;
+	}
+
+	.href-padding {
+		width: 90%;
+	}
+}
+
+@media (max-width: 1024px) {
+
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
+}
+
+@media (max-width: 768px) {
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+		gap: 30px;
+	}
+}
+
+@media (max-width: 645px) {
+
+	.todasLasCards {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+
+	}
+
+}
+
+@media (max-width: 425px) {
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
+
+
+}
+

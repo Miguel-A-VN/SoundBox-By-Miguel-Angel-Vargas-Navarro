@@ -1,0 +1,82 @@
+<%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/styles/allCategories.css">
+
+    <%- include("../partials/header") %>
+
+        <main class="main">
+            <section id="categories"
+                    class="main__content-categories main__section--margin-bottom main__section--bgColor mnw-768px--w-85">
+
+                    <div class="allCategories_container">
+                        <div class="dropdown-content-category_title">
+                            <div class="container-title-allCategories">
+                                <h3>Categorías</h3>
+                            </div>
+                            
+                            <br>
+                        </div>
+                        <div class="div__items-categories div__items-categories--grid">
+
+                            <article class="categoria">
+
+                                
+                                <a href="/categories/Guitarras">
+                                    <p class="category-name">Guitarras</p>
+                                    <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Accesorios">
+                                    <p class="category-name">Accesorios</p>
+                                    <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Efectos">
+                                    <p class="category-name">Efectos</p>
+                                    <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Pianos">
+                                    <p class="category-name">Teclados & Pianos</p>
+                                    <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Orquesta">
+                                    <p class="category-name">Orquesta</p>
+                                    <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Amplificacion">
+                                    <p class="category-name">Amplificación</p>
+                                    <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">          
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Segunda-Mano">
+                                    <p>Segunda Mano</p>
+                                    <p class="category-name" class="category-z-index-text">Segunda Mano</p>
+                                    <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
+                                </a>
+                            </article>
+
+                            <article class="categoria">
+                                <a href="/categories/Grabacion">
+                                    <p class="category-name">Grabación</p>
+                                    <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
+                                </a>
+                            </article>
+
+                        </div>
+        </main>
+
+        <%- include("../partials/footer") %>
